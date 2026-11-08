@@ -6,11 +6,11 @@
 </picture>
 </p>
 
-Open-source tools and infrastructure for agents, developers and security teams, all in Rust.
+Open-source tools and infrastructure for agents, developers and security teams.
 
-Agents now write code, run commands and hold credentials on real machines, but most of the tools around them were built for one person at a keyboard. Whiteheap builds tools for that shift.
+Agents now write code, run commands and hold credentials on real machines, but most developer tools were made for a person typing commands, not an agent running them. Whiteheap builds tools for that shift.
 
-We want absolute excellence in software. Our tools never touch your work unless they're sure it's safe, and they tell you what they did in a few words. They're fast, light and built in Rust, and you can check that every release is exactly what we built.
+We want absolute excellence in software. Our tools never touch your work unless they're sure it's safe, and they tell you what they did in a few words. They're fast and light, and we measure that on every change. You can check that every release is exactly what we built.
 
 ## Tools
 
