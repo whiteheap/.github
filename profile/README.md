@@ -10,7 +10,7 @@ Open-source tools and infrastructure for agents, developers and security teams, 
 
 Agents now write code, run commands and hold credentials on real machines, but most of the tools around them were built for one person at a keyboard. Whiteheap builds tools for that shift.
 
-We want absolute excellence in software. Each tool leaves your work alone whenever it cannot tell what is safe to touch, and says what it did in a few words. It uses as little CPU and memory as it can, and we measure both on each code change before it ships. Each command-line tool is one Rust binary, and each app is Rust around the system web view. All keep their dependencies as few as we can manage, and every release carries SHA-256 checksums and a build-provenance attestation.
+We want absolute excellence in software. Our tools never touch your work unless they're sure it's safe, and they tell you what they did in a few words. They're fast, light and built in Rust, and you can check that every release is exactly what we built.
 
 ## Tools
 
