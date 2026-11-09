@@ -10,7 +10,7 @@ Open-source tools and infrastructure for agents, developers and security teams.
 
 Agents now write code, run commands and hold credentials on real machines, but most developer tools were made for a person typing commands, not an agent running them. Whiteheap builds tools for that shift.
 
-We want absolute excellence in software. Our tools never touch your work unless they're sure it's safe, and they tell you what they did in a few words. They're fast and light, and we measure that on every change. You can check that every release is exactly what we built.
+We want absolute excellence in software. Our tools never touch your work unless they're sure it's safe, and they tell you what they did in a few words. They're fast and light, and we measure every change that could slow them down. You can check that every release is exactly what we built.
 
 ## Tools
 
@@ -38,19 +38,38 @@ Website: [residue.whiteheap.com](https://residue.whiteheap.com) · Source: [gith
 
 ### [residue-ui](https://github.com/whiteheap/residue-ui)
 
-**The Mac app for residue: see which worktrees can go and why, move them to the trash, restore them, and see what residue has freed.**
+<p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/whiteheap/residue-ui/main/docs/assets/hero-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/whiteheap/residue-ui/main/docs/assets/hero.png">
+  <img src="https://raw.githubusercontent.com/whiteheap/residue-ui/main/docs/assets/hero.png" width="830" alt="Reclaim your storage from Git worktrees, in a Mac app.">
+</picture>
+</p>
 
-It runs on macOS 13 or later, on Apple silicon and Intel, with residue inside. Download [residue-macos.dmg](https://residue.whiteheap.com/download/macos), open it, and drag residue to Applications. It is not notarized yet, so the first launch needs Open Anyway in System Settings, Privacy & Security.
+**Every check, size and removal in its window comes from the residue CLI, and nothing moves to the trash until you confirm the plan residue shows.**
 
-Shown with example repositories and a made-up history of removals:
+```sh
+curl -fLO https://github.com/whiteheap/residue-ui/releases/latest/download/residue-macos.dmg
+open residue-macos.dmg
+```
+
+Then drag residue to Applications. It needs macOS 13 or later, on Apple silicon or Intel, and nothing else: residue is inside. It is not notarized yet, so macOS may block the first launch: [First launch](https://github.com/whiteheap/residue-ui#first-launch) has the steps.
+
+Worktrees sizes each worktree by the space removing it frees, and shows what keeps each one. Restore lists what residue can bring back, and Freed what it has freed.
 
 <p>
-<img src="https://raw.githubusercontent.com/whiteheap/residue-cli/main/docs/screenshots/worktrees.png" width="830" alt="The Worktrees screen: a line that says automatic cleanup freed about 70.3 MB, 1 worktree, since the app was last open, with a link to Freed. Below it, 1.3 GB reclaimable, 6 of 11 worktrees can go, about 975 MB freed in the last 7 days. A treemap sizes each worktree by the space removing it frees, grouped by repository: white for can go, gray for kept, hatched for unknown. Below it, each worktree's checks and verdict.">
+<img src="https://raw.githubusercontent.com/whiteheap/residue-ui/main/docs/screenshots/worktrees.png" width="830" alt="The Worktrees screen: a line that says automatic cleanup freed about 70.3 MB, 1 worktree, since the app was last open, with a link to Freed. Below it, 1.3 GB reclaimable, 6 of 11 worktrees can go, about 975 MB freed in the last 7 days. A treemap sizes each worktree by the space removing it frees, grouped by repository: white for can go, gray for kept, hatched for unknown. Below it, each worktree's checks and verdict.">
 </p>
 
 <p>
-<img src="https://raw.githubusercontent.com/whiteheap/residue-cli/main/docs/screenshots/freed.png" width="830" alt="The Freed screen: 975 MB freed in the last 7 days, 2.1 GB in the last 30, 5.9 GB all time and 215 MB since the app was last open, a column for each of the last 12 weeks, the space each command freed (residue watch, residue remove --all and residue remove by hand), and the space freed in each repository, most first.">
+<img src="https://raw.githubusercontent.com/whiteheap/residue-ui/main/docs/screenshots/restore.png" width="830" alt="The Restore screen: 237 MB reclaimable in 2 trash entries, then what residue can bring back, newest first. Each removed worktree's row gives its name and branch, how long ago and by what it was removed, the space that freed, the date it is restorable until at least, its path, and the ignored files it comes back without. The newest, acme-mobile-release-2-5, was removed just now by residue watch because its upstream branch was deleted: 70.3 MB freed, restorable until at least Jan 31, 2027, 12 weeks after its removal, and it comes back without node_modules/ (1 file, 70.3 MB). The rows removed by residue remove are restorable until at least Dec 8, 2026, 30 days after their removal. A trash entry, moved to the trash 2 days ago, holds 132 MB until the first cleanup after 7 days deletes it and leaves a removal record. Each row has a Restore button.">
 </p>
+
+<p>
+<img src="https://raw.githubusercontent.com/whiteheap/residue-ui/main/docs/screenshots/freed.png" width="830" alt="The Freed screen: 975 MB freed in the last 7 days, 2.1 GB in the last 30, 5.9 GB all time and 215 MB since the app was last open, a column for each of the last 12 weeks, the space each command freed (residue watch, residue remove --all and residue remove by hand), and the space freed in each repository, most first.">
+</p>
+
+The screenshots show example repositories and a made-up history of removals.
 
 Source: [github.com/whiteheap/residue-ui](https://github.com/whiteheap/residue-ui)
 
